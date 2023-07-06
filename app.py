@@ -12,6 +12,7 @@ scaler=pickle.load(open('models/scaler.pkl','rb'))
 @app.route('/')
 def index():
     return render_template('index.html')
+    # app.config['SQLAL']
 
 
 @app.route('/predictdata',methods=['GET','POST'])
