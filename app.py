@@ -27,9 +27,17 @@ def predict_datapoint():
         new_data=scaler.transform([[Glucose,BloodPressure,SkinThickness,Insulin, BMI,Age]])
         result=model.predict(new_data)
 
-        return render_template('home.html',result=result[0])
+        if result == 1:
+            pred = "OOPS! 😕, You have Diabetes, please consult a Doctor."
+        elif result == 0:
+            pred = "You don't have Diabetes.😊live a healthy life!❤️"
+        output = pred
+
+        return render_template('home.html', result='{}'.format(output))
     else:
         return render_template('home.html')
+
+
 
 
 if __name__=="__main__":

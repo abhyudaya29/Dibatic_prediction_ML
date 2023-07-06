@@ -1,26 +1,64 @@
 <html>
+<head>
+    <style>
+        .login {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+
+        .login h1 {
+            text-align: center;
+        }
+
+        .login input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .login h2 {
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
     <div class="login">
-       <h1>Dibatic prediction</h1>
-   
+        <h1>Diabetic Prediction</h1>
+
         <!-- Main Input For Receiving Query to our ML -->
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-         <input type="text" name="Glucose" placeholder="Glucose" required="required" /><br>
-           <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" /><br>
-           <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" /><br>
-           <input type="text" name="Insulin" placeholder="Insulin" required="required" /><br>
-           <input type="text" name="BMI" placeholder="BMI" required="required" /><br>
-           <input type="text" name="Age" placeholder="Age" required="required" /><br>
-           
-           
-           
-   
-   
-   
-           <button type="submit" class="btn btn-primary btn-block btn-large">Check</button>
-       </form>
-    <h2>
-       THE Dibatic prediction is {{result}}
-    </h2>
-   <body>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="Glucose" placeholder="Glucose" required="required" /><br>
+            <input type="text" name="BloodPressure" placeholder="Blood Pressure" required="required" /><br>
+            <input type="text" name="SkinThickness" placeholder="Skin Thickness" required="required" /><br>
+            <input type="text" name="Insulin" placeholder="Insulin" required="required" /><br>
+            <input type="text" name="BMI" placeholder="BMI" required="required" /><br>
+            <input type="text" name="Age" placeholder="Age" required="required" /><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Check</button>
+        </form>
+        <h2>
+             {{result}}
+        </h2>
+    </div>
+</body>
 </html>
